@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://drphyr6ebpd83"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_d73sx"]
+[ext_resource type="Texture2D" uid="uid://cbs62eqmkk7aj" path="res://assets/spritesheet_retina.png" id="1_s2t48"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wkyws"]
+radius = 40.0
+height = 122.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpa8g"]
+size = Vector2(80, 71)
+
+[node name="Player" type="CharacterBody2D" groups=["players"]]
+floor_constant_speed = true
+script = ExtResource("1_d73sx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s2t48")
+region_enabled = true
+region_rect = Rect2(1152, 0, 128, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_wkyws")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25.5)
+shape = SubResource("RectangleShape2D_hpa8g")
