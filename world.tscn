@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://gx4jlo7kagwh"]
+[gd_scene load_steps=8 format=3 uid="uid://gx4jlo7kagwh"]
 
 [ext_resource type="Texture2D" uid="uid://cbs62eqmkk7aj" path="res://assets/spritesheet_retina.png" id="1_oxrjg"]
 [ext_resource type="Script" path="res://world.gd" id="1_qi55j"]
 [ext_resource type="PackedScene" uid="uid://drphyr6ebpd83" path="res://player.tscn" id="2_roq5e"]
 [ext_resource type="PackedScene" uid="uid://bnrbfp612m3v0" path="res://multi_target_camera.tscn" id="3_jeo6o"]
+[ext_resource type="Texture2D" uid="uid://cbxygy1baxc0i" path="res://assets/Papier4.png" id="5_v84rr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tt47"]
 texture = ExtResource("1_oxrjg")
@@ -391,3 +392,15 @@ position = Vector2(1062, 754)
 player_num = 1
 
 [node name="MultiTargetCamera" parent="." instance=ExtResource("3_jeo6o")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_v84rr")
+stretch_mode = 1
