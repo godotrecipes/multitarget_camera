@@ -26,7 +26,6 @@ func _process(delta):
 	for target in targets:
 		r = r.expand(target.position)
 	r = r.grow_individual(margin.x, margin.y, margin.x, margin.y)
-	var d = max(r.size.x, r.size.y)
 	var z
 	if r.size.x > r.size.y * screen_size.aspect():
 		z = 1 / clamp(r.size.x / screen_size.x, max_zoom, min_zoom)
@@ -35,7 +34,7 @@ func _process(delta):
 	zoom = lerp(zoom, Vector2.ONE * z, zoom_speed * delta)
 	
 	# For debug
-#	get_parent().draw_cam_rect(r)
+	get_parent().draw_cam_rect(r)
 		
 func add_target(t):
 	if not t in targets:

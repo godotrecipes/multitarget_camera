@@ -75,9 +75,9 @@ func _physics_process(delta):
 func hit_react(n):
 	if not hit:
 		hit = true
-		velocity.y = jump_speed / 4
+		velocity.y = jump_speed / 4.0
 		if is_equal_approx(n.y, -1):
-			velocity.y += jump_speed / 2
+			velocity.y += jump_speed / 2.0
 		else:
 			velocity.x = n.x * 400
 		is_jumping = true
